@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f4f7;
+  color: #1a1a1a;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 380px;
+  margin: 16px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 1.6rem;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #767676;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: 3px solid #1a5fb4;
+  outline-offset: 1px;
+}
+
+/* Campo con error */
+input.campo-error {
+  border-color: #c00000;
+}
+
+/* Mensajes de error: */
+.error {
+  margin-top: 6px;
+  color: #c00000;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.error-general {
+  margin-bottom: 12px;
+}
+
+.exito {
+  margin-bottom: 12px;
+  color: #1b6e2d;
+  font-weight: bold;
+}
+
+.botones {
+  margin-top: 24px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #1a5fb4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #144a8f;
+}
+
+button:focus-visible {
+  outline: 3px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.olvide {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  color: #1a5fb4;
+}
