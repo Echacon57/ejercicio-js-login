@@ -3,28 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión</title>
+  <title>Login</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="index.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <main class="tarjeta">
-    <h1>Iniciar sesión</h1>
-    
-    <div class="campo">
-      <label for="usuario">Usuario</label>
-      <input type="text" id="usuario" autocomplete="username">
-    </div>
 
-    <div class="campo">
-      <label for="contrasena">Contraseña</label>
-      <input type="password" id="contrasena" autocomplete="current-password">
-    </div>
+    <form id="form-login" novalidate>
+      <div class="campo">
+        <label for="usuario">usuario:</label>
+        <input type="text" id="usuario" autocomplete="username" aria-describedby="error-usuario">
+        <p class="error oculto" id="error-usuario" role="alert"></p>
+      </div>
 
-    <div class="botones">
-      <button type="button" id="btn-login">Iniciar sesión</button>
-      <a href="#" class="olvide">Olvidé mi contraseña</a>
-    </div>
+      <div class="campo">
+        <label for="contrasena">contraseña:</label>
+        <input type="password" id="contrasena" autocomplete="current-password" aria-describedby="error-contrasena">
+        <p class="error oculto" id="error-contrasena" role="alert"></p>
+      </div>
+
+      <button type="submit" class="boton-login">Iniciar sesión</button>
+      <a href="#" class="olvide" id="enlace-olvide">olvidé mi contraseña</a>
+      <p class="exito oculto" id="mensaje-recuperacion" role="status"></p>
+    </form>
+
+    <!-- Mensaje de bienvenida -->
+    <section id="bienvenida" class="bienvenida oculto" tabindex="-1">
+      <h1>¡Bienvenido, <span id="nombre-usuario"></span>!</h1>
+    </section>
+
   </main>
+
+  <!-- Ventana recuperar contraseña -->
+  <dialog id="dialogo-recuperar" aria-labelledby="etiqueta-correo">
+    <form id="form-recuperar" class="dialogo-contenido" novalidate>
+      <label for="correo" id="etiqueta-correo" class="etiqueta-dialogo">Escribe tu correo electrónico:</label>
+      <input type="email" id="correo" placeholder="micorreoelectronico@gmail.com" autocomplete="email" aria-describedby="error-correo">
+      <p class="error oculto" id="error-correo" role="alert"></p>
+
+      <p class="texto-dialogo">Se te enviará un link para restablecer tu contraseña</p>
+
+      <div class="acciones">
+        <button type="submit" class="boton-restablecer">Restablecer contraseña</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>

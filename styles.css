@@ -1,3 +1,9 @@
+:root {
+  --rojo: #d00000;
+  --gris: #d9d9d9;
+  --azul-foco: #1a5fb4;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,100 +14,165 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f2f4f7;
-  color: #1a1a1a;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #000000;
 }
 
+/* Tarjeta con borde negro, centrada */
 .tarjeta {
   width: 100%;
-  max-width: 380px;
+  max-width: 470px;
   margin: 16px;
-  padding: 32px;
+  padding: 32px 36px 28px;
+  border: 4px solid #000000;
   background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-}
-
-h1 {
-  margin: 0 0 24px;
-  font-size: 1.6rem;
 }
 
 .campo {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 label {
   display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
 }
 
+/* Campos grises */
 input {
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #767676;
-  border-radius: 4px;
+  height: 54px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  background: var(--gris);
+  border: 3px solid transparent;
 }
 
-input:focus {
-  outline: 3px solid #1a5fb4;
-  outline-offset: 1px;
+input::placeholder {
+  font-style: italic;
+  color: #595959;
 }
 
-/* Campo con error */
+input:focus-visible {
+  outline: 3px solid var(--azul-foco);
+  outline-offset: 2px;
+}
+
+/* Campo con error: borde rojo */
 input.campo-error {
-  border-color: #c00000;
+  border-color: var(--rojo);
 }
 
-/* Mensajes de error: */
+/* Mensajes de error */
 .error {
-  margin-top: 6px;
-  color: #c00000;
-  font-size: 0.9rem;
+  margin: 6px 0 0;
+  color: var(--rojo);
+  font-size: 0.8rem;
+  font-style: italic;
   font-weight: bold;
 }
 
-.error-general {
-  margin-bottom: 12px;
-}
 
-.exito {
-  margin-bottom: 12px;
-  color: #1b6e2d;
-  font-weight: bold;
-}
-
-.botones {
-  margin-top: 24px;
-}
-
-button {
+.boton-login {
+  display: block;
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  background: #1a5fb4;
+  margin-top: 26px;
+  padding: 26px 12px;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #000000;
+  background: var(--gris);
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #144a8f;
+.boton-login:hover {
+  background: #c4c4c4;
 }
 
-button:focus-visible {
-  outline: 3px solid #1a1a1a;
+.boton-login:focus-visible,
+.boton-restablecer:focus-visible {
+  outline: 3px solid var(--azul-foco);
   outline-offset: 2px;
 }
 
 .olvide {
   display: block;
-  margin-top: 14px;
+  margin-top: 16px;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+/* Mensaje de éxito recuperar contraseña*/
+.exito {
+  margin: 14px 0 0;
+  color: #1b6e2d;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.bienvenida h1 {
+  margin: 0;
+  padding: 40px 0;
   text-align: center;
-  color: #1a5fb4;
+  font-size: 1.8rem;
+}
+
+.bienvenida:focus {
+  outline: none;
+}
+
+/* Ventana recuperar contraseña */
+dialog {
+  width: min(92vw, 580px);
+  padding: 0;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.dialogo-contenido {
+  padding: 48px 52px 36px;
+}
+
+.etiqueta-dialogo {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.texto-dialogo {
+  margin: 22px 0 28px;
+  font-size: 1rem;
+}
+
+.acciones {
+  text-align: right;
+}
+
+.boton-restablecer {
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #000000;
+  background: var(--gris);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.boton-restablecer:hover {
+  background: #c4c4c4;
+}
+
+
+.oculto {
+  display: none;
 }
